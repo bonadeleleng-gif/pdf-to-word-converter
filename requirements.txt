@@ -2,3 +2,8 @@
 streamlit
 pymupdf
 python-docx
+openpyxl
+python-pptx
+pandas
+pytesseract
+Pillow
