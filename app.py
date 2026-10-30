@@ -8,7 +8,7 @@ from io import BytesIO
 from PIL import Image
 import pytesseract
 
-st.set_page_config(
+st.title("📚 Universal Document Reader")
     page_title="Document Reader",
     page_icon="📚",
     layout="wide"
