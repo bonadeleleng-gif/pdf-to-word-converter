@@ -12,6 +12,37 @@ st.set_page_config(
     page_title="Document Reader",
     page_icon="📚",
     layout="wide"
+# Android PWA integration
+import streamlit.components.v1 as components
+
+components.html(
+    """
+    <script>
+    const parentDoc = window.parent.document;
+
+    if (!parentDoc.querySelector('link[rel="manifest"]')) {
+        const manifest = parentDoc.createElement('link');
+        manifest.rel = 'manifest';
+        manifest.href = '/manifest.json';
+        parentDoc.head.appendChild(manifest);
+    }
+
+    if (!parentDoc.querySelector('meta[name="theme-color"]')) {
+        const theme = parentDoc.createElement('meta');
+        theme.name = 'theme-color';
+        theme.content = '#2563eb';
+        parentDoc.head.appendChild(theme);
+    }
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .catch(error => console.log('Service worker:', error));
+    }
+    </script>
+    """,
+    height=0,
+)
+
 )
 
 st.title("📚 Universal Document Reader")
