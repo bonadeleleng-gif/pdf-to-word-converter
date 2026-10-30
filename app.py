@@ -8,10 +8,11 @@ from io import BytesIO
 from PIL import Image
 import pytesseract
 
-st.title("📚 Universal Document Reader")
+st.set_page_config(
     page_title="Document Reader",
     page_icon="📚",
     layout="wide"
+)
 # Android PWA integration
 import streamlit.components.v1 as components
 
