@@ -44,7 +44,7 @@ components.html(
     height=0,
 )
 
-)
+
 
 st.title("📚 Universal Document Reader")
 st.write("Upload, read, search and extract text from your documents.")
